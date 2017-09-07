@@ -12,7 +12,24 @@
     height: 250px;
 }
 
+.Box1{
+    background-color: rgb(66, 133, 244);
+    width: 305px;
+    height: 255px;
+}
+
+.Box2{
+    background-color: rgb(66, 133, 244);
+    width: 305px;
+    height: 255px;
+    top: 10px; 
+    left: 10px;
+}
+
 p {
     color: white;
     font-weight: lighter;
+    font-size: 36px;
+    text-align: center;
+    
 }
