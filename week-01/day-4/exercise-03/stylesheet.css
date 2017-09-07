@@ -3,6 +3,8 @@
     width: 300px;
     height: 250px;
     border-color: rgb(66, 133, 244);
+    position: relative
+    padding: 1px;
     
 }
 
@@ -10,12 +12,14 @@
     background-color: rgb(169, 230, 230);
     width: 300px;
     height: 250px;
+    position: relative;
+    padding: 1px;
 }
 
 .Box1{
     background-color: rgb(66, 133, 244);
     width: 305px;
-    height: 255px;
+    height: 260px;
 }
 
 .Box2{
@@ -31,5 +35,7 @@ p {
     font-weight: lighter;
     font-size: 36px;
     text-align: center;
+    position: relative;
+    padding: 19px;
     
 }
