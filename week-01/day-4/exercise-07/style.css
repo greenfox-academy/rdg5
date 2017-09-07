@@ -1,0 +1,21 @@
+.big {
+    color: blue;
+}
+
+div div {
+    border-style: solid;
+    border-color: green;
+    border-width: 1px;
+}
+
+div {
+    font-weight: bold;
+}
+
+body {
+    width: 30%;
+}
+
+p {
+    background-color: yellow;
+}
