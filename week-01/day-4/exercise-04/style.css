@@ -1,0 +1,11 @@
+h1 {
+    color: orange;
+}
+
+div {
+    height: 200px;
+    width: 45%;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.5px;
+}
