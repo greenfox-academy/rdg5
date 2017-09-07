@@ -1,0 +1,18 @@
+.North {
+    background-color: rgb(213, 118, 118);
+    width: 300px;
+    height: 250px;
+    border-color: rgb(66, 133, 244);
+    
+}
+
+.South {
+    background-color: rgb(169, 230, 230);
+    width: 300px;
+    height: 250px;
+}
+
+p {
+    color: white;
+    font-weight: lighter;
+}
