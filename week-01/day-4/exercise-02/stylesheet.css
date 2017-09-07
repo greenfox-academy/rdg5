@@ -1,0 +1,59 @@
+.Body {
+    padding: 50px;
+    margin: 15px;
+    width: 300px;
+    height: 385px;
+    background-color: rgb(66, 133, 244);
+}
+
+.North {
+    background-color: rgb(213, 118, 118);
+    position: relative;
+    margin: 5px;
+    height: 110px;
+    top: -65px;
+    left: -40px;
+    width: 122.7%;
+}
+
+.East {
+    position: relative;
+    margin: 5px;
+    background-color: rgb(242, 240, 98);
+    height: 110px;
+    top: -101px;
+    left: -40px;
+    width: 122.7%;
+}
+
+.South {
+    position: relative;
+    margin: 5px;
+    background-color: rgb(169, 230, 230);
+    height: 110px;
+    top: -137px;
+    left: -40px;
+    width: 122.7%;
+}
+
+.West {
+    position: relative;
+    margin: 5px;
+    background-color: rgb(190, 146, 228);
+    height: 110px;
+    top: -173px;
+    left: -40px;
+    width: 122.7%;
+}
+
+p {
+    color: white;
+    font-weight: lighter;
+    font-size: 36px;
+    text-align: center;
+    align-self: center;
+}
+
+div{
+    width: 110px;
+}
