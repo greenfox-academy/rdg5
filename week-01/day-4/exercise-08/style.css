@@ -1,0 +1,30 @@
+div {
+    width: 50%;
+    /* background-color: tomato; */
+    height: 100px;
+    padding: 10 25;
+}
+
+.blue {
+    background-color: white;
+    border-style: solid;
+    border-color: blue;
+    width: 50%;
+}
+
+.purple {
+    background-color: rgb(255, 99, 71);
+    border-style: solid;
+    border-color: blue;
+    margin-top: 10px;
+    width: 50%;
+}
+
+span {
+    width: 100px;
+    height: 100px;
+    padding-top: 5px;
+    background-color: tomato;
+    border-style: solid;
+    /* border-color: black; */
+}
