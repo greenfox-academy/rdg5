@@ -1,0 +1,28 @@
+h1 {
+    color: rgb(255, 99, 71);
+}
+h2 {
+    color: rgb(146, 85, 233);
+}
+p {
+    font-size: 17px; 
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+color: rgb(255, 74, 255);
+text-decoration: underline;
+list-style: upper-roman;
+}
+
+ol >:last-child {
+    color: black;
+    text-decoration: underline;
+}
+
+body {
+    width: 40%;
+}
