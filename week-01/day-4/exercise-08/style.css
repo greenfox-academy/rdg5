@@ -28,3 +28,13 @@ span {
     border-style: solid;
     /* border-color: black; */
 }
+
+div div {
+    width: 0px;
+    height: 26px;
+    background-color: tomato;
+    margin: 5px;
+    border-style: solid;
+    border-color: black;
+    
+}
