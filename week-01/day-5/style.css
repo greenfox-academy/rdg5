@@ -33,7 +33,7 @@
     width: 244px;
     background-color: yellow;
     margin-left: 235px;
-    margin-top: -328px;
+    margin-top: -348px;
     /* padding-left: 90px; */
 }
 
@@ -55,4 +55,8 @@
 h1{
     text-align: left;
     margin: -11px auto;
+}
+
+span {
+    float: right;
 }

@@ -16,12 +16,79 @@
         </div>
         <div class="mid">
             <div class="mid1">
-                <h2>
+                <h2> Személyes adatok</h2>
                 <form>
-                    
+                    <!-- Név <br> -->
+
+                    <label for="name">Név</label> <br>
+                    <input type="text" name="name" required id="name">
+
+
+
+                    <label for="yob">Születési éved </label> <br>
+                    <input type="text" required id="yob" placeholder="pl. 1984" maxlength="4" size="4">
+
+                    <span id="gender">
+                    <label for="male">Nemed</label> <br>
+                    <input id="male" type="radio" name="gender">Férfi</input>
+                    <label for="female"></label>
+                    <input id="female" type="radio" name="gender">Nő</input>
+                    </span>
+                </form>
+                <!-- -------------------------------------------------------------------------------
+here starts the checkbox
+
+--------------------------------------------------------------------------------- -->
+
+                Milyen márkákat szeretsz?<br>
+                <form>
+                    <input type="checkbox" name="brand" value="Adidas"> Adidas<br>
+                    <input type="checkbox" name="brand" value="Apple">Apple<br>
+                    <input type="checkbox" name="brand" value="Coca-Cola">Coca-Cola<br>
+                    <input type="checkbox" name="brand" value="Mazda"> Mazda<br>
+                    <input type="checkbox" name="brand" value="Nike"> Nike<br>
+                    <input type="checkbox" name="brand" value="Opel">Opel<br>
+                    <input type="checkbox" name="brand" value="Ray-Ban">Ray-Ban<br>
+                    <input type="checkbox" name="brand" value="Starbucks"> Starbucks<br>
+                    <input type="checkbox" name="brand" value="Tesla">Tesla<br>
+                    <input type="checkbox" name="brand" value="Yahoo">Yahoo<br>
+
+
+
+
+
+
                 </form>
             </div>
             <div class="mid2">
+                <h2>Kapcsolat</h2>
+                <form>
+                    <label for="usertel">Telefonszám</label> <br>
+                    <input type="tel" name="usertel" placeholder="+36 -- --- ----">
+                </form>
+                <form>
+                    <label for="email">E-mail cím</label> <br>
+                    <input type="email" name="email" placeholder="nev@domain.hu">
+                </form>
+                <form>
+
+                    <label for="fb">Facebook profilod</label> <br>
+                    <input type="text" name="fb" placeholder="http://facebook.com/...">
+                </form>
+                <form>
+                    <label for="twitter">Facebook profilod</label> <br>
+                    <input type="text" name="twitter" placeholder="http://twitter.com/...">
+
+                </form>
+
+                <form>
+
+
+                </form>
+
+
+
+
             </div>
         </div>
         <div class="bot">
