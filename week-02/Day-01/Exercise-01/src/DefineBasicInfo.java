@@ -11,16 +11,12 @@ public class DefineBasicInfo {
       double height = 184;
       boolean married = false;
 
-
       System.out.println(name);
       System.out.println(age);
       System.out.println(height);
       System.out.println("Am I married?");
         if (married == false){ System.out.println("No");
         }
-
-
-
 
   }
 }

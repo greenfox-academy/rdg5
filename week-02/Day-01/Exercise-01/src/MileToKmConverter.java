@@ -11,7 +11,5 @@ public class MileToKmConverter {
 
       System.out.println("\"In miles this is equal to: \"" + mile);
 
-
-
   }
 }

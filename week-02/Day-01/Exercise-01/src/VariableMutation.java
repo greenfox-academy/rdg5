@@ -29,14 +29,11 @@ public class VariableMutation {
 	  // please cube of e's value
       System.out.println(e);
 
-
-
       int f1 = 123;
       int f2 = 345;
       boolean answer = f1 > f2;
   	// tell if f1 is bigger than f2 (print as a boolean)
       System.out.println(answer);
-
 
       int g1 = 350;
   	  int g2 = 200;
@@ -44,14 +41,9 @@ public class VariableMutation {
   	// tell if the double of g2 is bigger than g1 (print as a boolean)
       System.out.println(DoubleAnswer);
 
+      int h = 135798745;
 
-
-		int h = 135798745;
-
-
-	  // tell if it has 11 as a divisor (print as a boolean)
-
-
+      // tell if it has 11 as a divisor (print as a boolean)
 
       int i1 = 10;
 	  int i2 = 3;
@@ -60,19 +52,13 @@ public class VariableMutation {
   	// tell if i1 is higher than i2 squared and smaller than i2 cubed (print as a boolean)
       System.out.println(SquaredAndCubed);
 
-
-
-		int j = 1521;
+        int j = 1521;
 		boolean dividableby3 = (j % 3) == 0;
 		boolean dividableby5 = (j % 5) ==0;
       System.out.println(dividableby3 || dividableby5);
       // tell if j is dividable by 3 or 5 (print as a boolean)
 
-
-
-
-
-		String k = "Apple";
+      String k = "Apple";
 
   	//fill the k variable with its content 4 times
       System.out.println(String.join(",", "Apple","Apple","Apple","Apple"));

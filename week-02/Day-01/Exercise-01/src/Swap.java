@@ -4,7 +4,6 @@ public class Swap {
     int b = 526;
     // Swap the values of the wariables
     
-
     int temp = a;
     a = b;
     b = temp;
