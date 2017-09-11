@@ -5,7 +5,9 @@ public class Swap {
     // Swap the values of the wariables
     
 
-
+    int temp = a;
+    a = b;
+    b = temp;
 
     System.out.println(a);
     System.out.println(b);

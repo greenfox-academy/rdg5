@@ -10,8 +10,8 @@ public class IntroduceYourself {
     //  John Doe
     //  31
     //  1.87
-    System.out.println();
-    System.out.println();
-    System.out.println();
+    System.out.println("Sándor Vass");
+    System.out.println("24");
+    System.out.println("1.82");
   }
 }
