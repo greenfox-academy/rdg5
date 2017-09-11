@@ -3,3 +3,13 @@
 // If the number is one it should print: One
 // If the number is two it should print: Two
 // If the number is more than two it should print: A lot
+
+import java.util.Scanner;
+
+public class OneTwoALot {
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         System.out.println("Please type in a number");
+     }
+
+ }
