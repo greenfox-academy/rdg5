@@ -1,4 +1,4 @@
-public class Printer{
+/*public class Printer{
     public static void main(String[] args) {
 
         printer("s");
@@ -11,3 +11,4 @@ public class Printer{
     }
 
     }
+*/
