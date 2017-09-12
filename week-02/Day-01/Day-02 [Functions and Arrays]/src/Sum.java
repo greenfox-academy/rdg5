@@ -3,9 +3,11 @@ public class Sum {
         sum(4);
     }
 
-    public static void sum(int input) {
-        for (int i = 0; i < 11; i++) {
-            System.out.println(i);
+    public static int sum(int input) {
+        int sumOfAllNumbers = 0;
+        for (int i = 0; i < input; i++) {
+            sumOfAllNumbers += i;
         }
+        return sumOfAllNumbers;
     }
 }
