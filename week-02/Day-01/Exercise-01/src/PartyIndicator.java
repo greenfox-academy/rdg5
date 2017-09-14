@@ -16,24 +16,26 @@
 import java.util.Scanner;
 
 public class PartyIndicator {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please type in two numbers! The first is the number of girls, the second, the number of boys: ");
-        int numberOfGirls = scanner.nextInt();
-        int numberOfBoys = scanner.nextInt();
 
-        if (numberOfGirls == 0) {
-            System.out.println("Sausage Party");
-        } else if ((numberOfGirls + numberOfBoys) < 20) {
-            System.out.println("Average party");
-        } else if (((numberOfGirls + numberOfBoys) > 20) && (numberOfGirls < numberOfBoys)) {
-            System.out.println("Quite cool party!");
-        } else {
-            System.out.println("The party is excellent monkaS");
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println(
+        "Please type in two numbers! The first is the number of girls, the second, the number of boys: ");
+    int numberOfGirls = scanner.nextInt();
+    int numberOfBoys = scanner.nextInt();
 
-        }
+    if (numberOfGirls == 0) {
+      System.out.println("Sausage Party");
+    } else if ((numberOfGirls + numberOfBoys) < 20) {
+      System.out.println("Average party");
+    } else if (((numberOfGirls + numberOfBoys) > 20) && (numberOfGirls < numberOfBoys)) {
+      System.out.println("Quite cool party!");
+    } else {
+      System.out.println("The party is excellent monkaS");
 
     }
+
+  }
 
 
 }
