@@ -17,30 +17,9 @@ public class Matrix {
     for (int i = 0; i < matrix.length; i++) {
       for (int j = 0; j < matrix.length; j++) {
         matrix[i][j] = 1;
-
         System.out.print("[" + matrix[i][j] + "]");
       }
       System.out.println();
-
     }
   }
 }
-
-
-
-
-    //for (int i = 0; i < 4; i++) {
-      //System.out.println();
-      //for (int j = 0; j < 4; j++) {
-    //System.out.println(Arrays.deepToString(matrix).replace("],", "\n"));
-
-
-        //System.out.println();
-        //System.out.println(matrix[i][j] + " ");
-       // System.out.println(Arrays.deepToString(matrix));
-      //}
-      //System.out.println();
-   // }
-
-  //}
-//}
