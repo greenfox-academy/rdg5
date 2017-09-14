@@ -1,14 +1,18 @@
-/*public class Printer{
-    public static void main(String[] args) {
+/*import java.util.Scanner;
 
-        printer("s");
+public class Printer {
 
-    }
-    public static String printer(String str [1, 2, 3, 4]){
+  public static void main(String[] args) {
 
-        String[] str = {"abc", "cde", "blabla", "majom"};
-        return str[];
-    }
+    printer();
 
-    }
-*/
+  }
+
+  public static String printer(String){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Type in something: ");
+    String str = scanner.nextLine(String);
+    return str;
+  }
+
+}*/
