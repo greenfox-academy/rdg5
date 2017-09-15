@@ -4,9 +4,11 @@ public class GuessMyNumber {
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    System.out.print("Please enter the range: ");
-    int range = scanner.nextInt();
-    int random = 1 + (int) (Math.random() * (range - 1));
+    System.out.println("Please enter the minimum value of the range: ");
+    int minRange = scanner.nextInt();
+    System.out.println("Please enter the maximum value of the range: ");
+    int maxRange = scanner.nextInt();
+    int random = (minRange + 1) + (int) (Math.random() * (maxRange - 1));
     int guess = random;
     int lives = 5;
     boolean win = false;

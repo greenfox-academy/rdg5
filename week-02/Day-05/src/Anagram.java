@@ -1,19 +1,32 @@
 import java.util.Scanner;
 
 public class Anagram {
+
   public static void main(String[] args) {
+    String input1;
+    String input2;
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Please enter the first word :");
+    input1 = scanner.nextLine();
+    System.out.print("Please enter the second word :");
+    input2 = scanner.nextLine();
 
-    isAnagram("dog", "god");
-
+    System.out.println(isAnagram(input1, input2));
   }
-  public static boolean isAnagram(String input1, String input2){
 
-    String stringReversed = "";
-    for (int i = input1.length() -1; i >= 0; i--) {
-      char temporary = input1.charAt(i);
-      stringReversed = stringReversed.concat(String.valueOf(temporary));
-    }return false;
-
-    //System.out.println(stringReversed.equals(input2));
+  public static boolean isAnagram(String input1, String input2) {
+    if (input1.length() != input2.length()) {
+      return false;
+    } else {
+      int value = 0;
+      for (int i = 0; i < input1.length(); i++) {
+        value += ((int) input1.charAt(i)) ^ 2;
+        value -= ((int) input2.charAt(i)) ^ 2;
+      }
+      return value == 0;
+    }
   }
 }
+
+
+
