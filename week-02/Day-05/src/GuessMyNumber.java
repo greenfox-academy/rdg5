@@ -16,16 +16,16 @@ public class GuessMyNumber {
       guess = scanner.nextInt();
       lives--;
       if (lives == 0) {
-        System.out.println("Sorry, you lost.");
+        System.out.println("No more lives left! Sorry, you lost, you NOOB!");
         break;
       }
       if (guess == random) {
         win = true;
-        System.out.println("Congrats! You are awesome");
+        System.out.println("Congrats! You are awesome!");
       } else if (guess < random) {
-        System.out.println("Too low!");
+        System.out.println("Too low! Try a bit bigger!" + "You have " + lives + " lives left!");
       } else if (guess > random) {
-        System.out.println("Too high!");
+        System.out.println("Too high! Try a bit lower!" + "You have " + lives + " lives left!");
       }
     }
   }
