@@ -1,6 +1,7 @@
-/*public class Dictionary {
+public class Dictionary {
+
   public static void main(String[] args) {
-    map = new HashMap<String,String>();
+    map = new HashMap<String, String>();
     map.put("alma", "apple");
     map.put("fa", "tree");
   }
@@ -25,4 +26,3 @@
   }
 }
 
-*/

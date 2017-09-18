@@ -9,10 +9,10 @@ public class NameFromEmail {
   }
 
   public static String nameFromEmail(String input) {
-      String firstName = input.substring(5,8);
-      String secondName = input.substring(0,4);
-      String fullName = firstName + " " + secondName;
+    String firstName = input.substring(5, 8);
+    String secondName = input.substring(0, 4);
+    String fullName = firstName + " " + secondName;
 
-      return fullName;
+    return fullName;
   }
 }

@@ -12,17 +12,15 @@ public class OddFilter {
     // should print [1, 3, 5]
   }
 
-  private static int oddFilter(int[] values) {
-    int count = 0;
-    for (int i = 0; i < values.length; i++) {
-      if (values[i] % 2 != 0) {
-        ;
-      }
-      {
-        count++;
+  private static int oddFilter(int[] numbers) {
+    int countOdd = 0;
+    for (int i = 0; i < numbers.length; i++) {
+      if (numbers[i] % 2 != 0) {
+        countOdd++;
       }
     }
-    return count;
+    return countOdd;
   }
 }
+
 
