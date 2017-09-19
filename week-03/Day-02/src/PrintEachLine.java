@@ -3,7 +3,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.Files;
 import java.util.List;
-import java.util.Scanner;
 
 public class PrintEachLine {
 
