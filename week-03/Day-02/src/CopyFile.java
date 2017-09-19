@@ -12,19 +12,24 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-/*
+
 public class CopyFile {
 
   public static void main(String[] args) {
-    /*copy("a.txt", "b.txt");
+    System.out.println(copy("a.txt", "b.txt"));
 
-  } public static boolean copy (String source, String destination){
+  }
+
+  public static boolean copy(String source, String destination) {
     List<String> newList = new ArrayList<>();
     try {
       Files.copy(Paths.get(source), new FileOutputStream(destination));
-      copy("","");
-      if (source == destination)
-      return true;
+      copy("", "");
+      if (source == destination) {
+        return true;
+      }
     } catch (IOException e) {
-    } return false;
-    */
+    }
+    return false;
+  }
+}
