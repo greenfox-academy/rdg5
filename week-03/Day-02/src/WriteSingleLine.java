@@ -17,7 +17,7 @@ public class WriteSingleLine {
 
     try {
       Path filePath = Paths.get("my-file.txt");
-      Files.write(filePath,content);
+      Files.write(filePath, content);
     } catch (Exception e) {
       System.out.println("Unable to write file: my-file.txt");
     }
