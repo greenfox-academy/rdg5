@@ -11,16 +11,17 @@ public class GuessMyNumber {
     int random = (minRange + 1) + (int) (Math.random() * (maxRange - 1));
     int guess = random;
     int lives = 5;
+    System.out.println("Good luck, have fun. You have 5 lives left!");
     boolean win = false;
 
-    while (win == false) {
+    while (!win) {
       System.out.println("Please enter your guess: ");
       guess = scanner.nextInt();
-      lives--;
       if (lives == 0) {
         System.out.println("No more lives left! Sorry, you lost, you NOOB!");
         break;
       }
+      lives--;
       if (guess == random) {
         win = true;
         System.out.println("Congrats! You are awesome!");

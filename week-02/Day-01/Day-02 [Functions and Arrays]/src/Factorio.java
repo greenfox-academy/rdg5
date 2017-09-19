@@ -1,28 +1,20 @@
-public class Factorio {
+public static void main(String[] args) {
 
-  public static void main(String[] args) {
+    Scanner userInput = new Scanner(System.in);
 
-    /*System.out.println(factorio(5));
-  }
+    System.out.println("Input a number to get back it's factorial!");
+    int facInput = userInput.nextInt();
 
-  public static int factorio(int i) {
-    if (i == 0) {
-      return 0;
+    System.out.println(factorio(facInput));
     }
-    if (i > 1) {
-      i = i * factorio(--i);
+
+public static int factorio(int x) {
+    int factorial = 1;
+
+    for (int i = 1; i <= x + 1; i++) {
+    factorial *= i;
     }
-    return i;
-  }
-} */
-
-    int factorio = 1;
-    int number = 5;
-    for (int i = 1; i <= number; i++) {
-      factorio = factorio * i;
+    return factorial;
     }
-    System.out.println(factorio);
 
-  }
-}
-
+    }
