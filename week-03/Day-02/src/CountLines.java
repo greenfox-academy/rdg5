@@ -3,9 +3,6 @@
 // It should return zero if it can't open the file, and
 // should not raise any error.
 
-
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -18,6 +15,7 @@ public class CountLines {
     countTheLines("jóska.txt");
     System.out.println(countTheLines("jóska.txt"));
   }
+
   public static int countTheLines(String filename) {
     Path filePath = Paths.get("");
     try {

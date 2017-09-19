@@ -7,14 +7,32 @@
 // to the file and each line should be "apple"
 // The function should not raise any error if it could not write the file.
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class WriteMultipleLines {
 
   public static void main(String[] args) {
-
+    multipleValues("pista.txt", "apple", Integer.valueOf("5"));
   }
-  public static void multipleValues(){
 
+  public static void multipleValues(String mypath, String word, int number) {
+
+    List<String> content = new ArrayList();
+    content.add(word);
+    try {
+      Path myPath = Paths.get(mypath);
+      for (int i = 0; i <= number; i++) {
+        Files.write(myPath, content, StandardOpenOption.APPEND);
+      }
+    } catch (IOException e) {
+
+    }
   }
 }
