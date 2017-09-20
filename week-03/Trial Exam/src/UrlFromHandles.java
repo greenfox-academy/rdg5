@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import javax.swing.text.Element;
 
+
 public class UrlFromHandles {
 
   public static void main(String[] args) {
@@ -15,9 +16,14 @@ public class UrlFromHandles {
     // output: ["https://github.com/greenfox-academy/ghhandle1", "https://github.com/greenfox-academy/ghhandle2"]
     System.out.println(urlsFromHandles(Arrays.asList("ghhandle1", "ghhandle2")));
   }
-  public static ArrayList<String> urlsFromHandles() {
 
+  public static List<String> urlsFromHandles(List<String> strings) {
+    for (int i = 0; i <strings.size() ; i++) {
+      strings.set(i,"https://github.com/greenfox-academy/" + strings.get(i));
+    }
+    return
+    }
   }
-}
+
 
 

@@ -1,4 +1,4 @@
-public class Dictionary {
+/*public class Dictionary {
 
   public static void main(String[] args) {
     map = new HashMap<String, String>();
@@ -26,3 +26,4 @@ public class Dictionary {
   }
 }
 
+*/
