@@ -4,16 +4,18 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PurpleSteps {
+public class PurpleSteps3d {
 
-  public static void mainDraw(Graphics graphics) {
+  public static void mainDraw(Graphics graphics){
     // reproduce this:
-    // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
+    // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
 
     graphics.setColor(new Color(194, 66, 244));
-    for (int i = 10; i < 200; i += 10) {
-      graphics.fillRect(i, i, 10, 10);
+    for (int i = 10; i < 60 ; i+= 11) {
+      graphics.fill3DRect(i,i,i,i,true);
     }
+
+
   }
 
   //    Don't touch the code below
@@ -28,9 +30,7 @@ public class PurpleSteps {
     jFrame.setLocationRelativeTo(null);
     jFrame.setVisible(true);
   }
-
-  static class ImagePanel extends JPanel {
-
+  static class ImagePanel extends JPanel{
     @Override
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
