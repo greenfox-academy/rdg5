@@ -1,7 +1,7 @@
 public class NumberAdder {
 
   public static void main(String[] args) {
-    System.out.println(numAdd(8));
+    System.out.println(numAdd(5));
   }
 
   public static int numAdd(int n) {
