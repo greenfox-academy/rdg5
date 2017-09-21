@@ -11,8 +11,11 @@ public class PurpleSteps3d {
     // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
 
     graphics.setColor(new Color(194, 66, 244));
-    for (int i = 10; i < 60 ; i+= 11) {
-      graphics.fill3DRect(i,i,i,i,true);
+    for (int i = 10; i < 70 ; i+= 10) {
+      //for (int j = 10; j < 70; j++) {
+        //graphics.fill3DRect(j,j,j,j,true);
+      //}
+      graphics.fill3DRect (i+20,i+20 /,i,i,true);
     }
 
 
