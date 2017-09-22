@@ -7,9 +7,22 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class SierpinskiCarpet {
 
   public static void mainDraw(Graphics graphics) {
+//    graphics.drawRect(600,600,600,600);
+//    graphics.setColor(Color.black);
+//    graphics.fillRect(200,200,200,200);
     graphics.setColor(Color.black);
-    graphics.fillRect(200,200,200,200);
+    carpetDrawer(graphics,50,50,300);
 
+  }
+  public static void carpetDrawer(Graphics g, int x, int y, int size){
+      int frame =  size;
+      int oneThird = frame / 3;
+      g.setColor(Color.black);
+      g.fillRect(x+oneThird, y+oneThird, oneThird-1,oneThird-1);
+
+      if(oneThird >= 2) {
+        carpetDrawer(g, x, y, oneThird);
+      }
   }
 
   //    Don't touch the code below
