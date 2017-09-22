@@ -11,19 +11,30 @@ public class SierpinskiCarpet {
 //    graphics.setColor(Color.black);
 //    graphics.fillRect(200,200,200,200);
     graphics.setColor(Color.black);
-    carpetDrawer(graphics,50,50,300);
+    carpetDrawer(graphics,0,0,600);
 
   }
   public static void carpetDrawer(Graphics g, int x, int y, int size){
-      int frame =  size;
-      int oneThird = frame / 3;
+      //int frame =  size;
+      int oneThird = size / 3;
       g.setColor(Color.black);
-      g.fillRect(x+oneThird, y+oneThird, oneThird-1,oneThird-1);
+      g.fillRect(x+oneThird, y+oneThird, oneThird-2,oneThird-2);
 
-      if(oneThird >= 2) {
+      if(oneThird > 0) {
         carpetDrawer(g, x, y, oneThird);
+        carpetDrawer(g, x+oneThird,y,oneThird);
+        carpetDrawer(g,x,y+oneThird,oneThird);
+        carpetDrawer(g, x+oneThird, y+oneThird,oneThird);
+        carpetDrawer(g,x+2*oneThird,y,oneThird);
+        carpetDrawer(g,x+oneThird,y+2*oneThird,oneThird);
+        carpetDrawer(g,x,y+2*oneThird,oneThird);
+        carpetDrawer(g, x+2*oneThird,y+2*oneThird, oneThird);
+        carpetDrawer(g, x+2*oneThird, y+oneThird,oneThird);
+//        carpetDrawer(g, x+oneThird/2,y+oneThird,oneThird+oneThird);
+//        carpetDrawer(g,x-oneThird*3,y-oneThird,oneThird);
       }
-  }
+      }
+
 
   //    Don't touch the code below
   static int WIDTH = 600;
