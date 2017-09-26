@@ -15,7 +15,7 @@ public class Dominoes {
 
     for (int i = 0; i < dominoes.size() - 1; i++) {
       for (int j = 1; j < dominoes.size(); j++) {
-        if (dominoes.get(i).getValues()[1] == dominoes.get(j).getValues()[0]) {
+        if (dominoes.get(i).getValues()[1] == dominoes.get(j).getValues()[0] && j!=0) {
           Domino temp = dominoes.get(i + 1);
           dominoes.set(i + 1, dominoes.get(j));
           dominoes.set(j, temp);
