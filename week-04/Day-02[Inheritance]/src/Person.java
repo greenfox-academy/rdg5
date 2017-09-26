@@ -11,13 +11,13 @@ public class Person {
   }
 
   public Person() {
-    this.name = "Jane Doe";
-    this.age = 30;
-    this.gender = "female";
+    name = "Jane Doe";
+    age = 30;
+    gender = "female";
   }
 
   public void introduce() {
-    System.out.println("Hi, I'm" + name + ", a" + age + "year old" + gender);
+    System.out.println("Hi, I'm " + name + " , a " + age + " year old " + gender);
   }
 
   public void getGoal() {

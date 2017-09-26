@@ -3,15 +3,14 @@ public class Student extends Person {
   String previousOrganization;
   int skippedDays;
 
-  public Student(String previousOrganization) {
+  public Student(String name, int age, String gender, String previousOrganization) {
+    super(name, age, gender);
     this.previousOrganization = previousOrganization;
     skippedDays = 0;
   }
 
   public Student() {
-    name = "Jane Doe";
-    age = 30;
-    gender = "female";
+    super("Jane Doe", 30, "female");
     previousOrganization = "The School of Life";
     skippedDays = 0;
   }
@@ -22,8 +21,8 @@ public class Student extends Person {
 
   public void introduce() {
     System.out
-        .println("Hi, I'm" + name +
-            ", a" + age + "year old " + gender + "from" + previousOrganization +
+        .println("Hi, I'm " + name +
+            " , a " + age + " year old " + gender + " from " + previousOrganization +
             " who skipped " + skippedDays + " days from the course already.");
   }
 
