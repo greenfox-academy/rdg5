@@ -1,5 +1,10 @@
-package PACKAGE_NAME;
+public class Flower extends Plant {
 
-public class Flower {
+  String color;
 
+  public Flower(String color) {
+    this.color = color;
+    absorbPercent = 75;
+  }
 }
+

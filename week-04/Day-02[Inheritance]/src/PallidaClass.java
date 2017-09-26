@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class PallidaClass {
@@ -8,14 +9,18 @@ public class PallidaClass {
 
   public PallidaClass(String classname) {
     this.classname = classname;
+    students  = new ArrayList<>();
+    mentors = new ArrayList<>();
   }
 
   public void addStudent(Student student) {
     students.add(student);
+
   }
 
   public void addMentor(Mentor mentor) {
     mentors.add(mentor);
+
   }
 
   public void info() {
