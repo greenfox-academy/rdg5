@@ -1,10 +1,9 @@
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class SummingTest {
@@ -24,7 +23,7 @@ public class SummingTest {
     test1 = new ArrayList<>();
     test2 = new ArrayList<>(Arrays.asList(2));
     test3 = new ArrayList<>(Arrays.asList(3, 4, 5, 6, 65465464, 7));
-    test4 = new ArrayList<>(null);
+//    test4 = new ArrayList<>(null);
   }
 
   @After
