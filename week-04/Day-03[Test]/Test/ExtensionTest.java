@@ -28,7 +28,7 @@ class ExtensionTest {
   void testMaxOfThree_third() { assertEquals(155, extension.maxOfThree(3, 99, 155)); }
 
   @Test
-  void testMedian_four() { assertEquals(5, extension.median(Arrays.asList(7,5,3,5))); }
+  void testMedian_four() { assertEquals(5, extension.median(Arrays.asList(2,4,6,8))); }
 
   @Test void testMedian_five() { assertEquals(3, extension.median(Arrays.asList(1,2,3,4,5))); }
 

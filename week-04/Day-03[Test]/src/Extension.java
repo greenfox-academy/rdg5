@@ -23,15 +23,14 @@ public class Extension {
 
   int median(List<Integer> pool) {
     Collections.sort(pool);
-    int mid = pool.size() /2;
-    double result = ((double)pool.get(mid -1) + (double)pool.get(mid))/2;
+    int mid = pool.size() / 2;
+    double result = ((double) pool.get(mid - 1) + (double) pool.get(mid)) / 2;
     if (pool.size() % 2 != 0) {
       return pool.get(mid);
     } else {
       return (int) result;
     }
   }
-
 
 
   boolean isVowel(char c) {
@@ -51,4 +50,6 @@ public class Extension {
     }
     return teve;
   }
+
+
 }
