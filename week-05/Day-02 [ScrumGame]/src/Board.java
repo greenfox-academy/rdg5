@@ -10,18 +10,22 @@ public class Board extends JComponent implements KeyListener {
   int heroPosX;
   int heroPosY;
   String heroImage;
-  int[][] board = {
-      {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
-      {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
-      {0, 1, 1, 1, 0, 1, 0, 1, 1, 0},
-      {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-      {1, 1, 1, 1, 0, 1, 1, 1, 1, 0},
-      {0, 1, 0, 1, 0, 0, 0, 0, 1, 0},
-      {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
-      {0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
-      {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
-      {0, 0, 0, 1, 0, 1, 1, 0, 1, 0},
-      {0, 1, 0, 1, 0, 1, 0, 0, 0, 0}};
+  int[][] board = getInts();
+
+  private int[][] getInts() {
+    return new int[][]{
+        {0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1},
+        {0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1},
+        {0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1},
+        {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+        {1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1},
+        {0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1},
+        {0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1},
+        {0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1},
+        {0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1},
+        {0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1}
+    };
+  }
 
   public Board() {
     heroImage = "./Assets/hero-down.png";
@@ -69,21 +73,30 @@ public class Board extends JComponent implements KeyListener {
 
 
   @Override
+
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
-    if (e.getKeyCode() == KeyEvent.VK_UP && (board[heroPosY - 1][heroPosX] != 1)) {
+    if (e.getKeyCode() == KeyEvent.VK_UP) {
       heroImage = "./Assets/hero-up.png";
-      heroPosY--;
-    } else if (e.getKeyCode() == KeyEvent.VK_DOWN && (board[heroPosY + 1][heroPosX] != 1)) {
+      if (board[heroPosY - 1][heroPosX] != 1) {
+        heroPosY--;
+      }
+    } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
       heroImage = "./Assets/hero-down.png";
+      if (board[heroPosY + 1][heroPosX] != 1) {
+        heroPosY++;
+      }
 
-      heroPosY++;
-    } else if (e.getKeyCode() == KeyEvent.VK_LEFT && (board[heroPosY][heroPosX - 1] != 1)) {
+    } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
       heroImage = "./Assets/hero-left.png";
-      heroPosX--;
-    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && (board[heroPosY][heroPosX + 1] != 1)) {
+      if (board[heroPosY][heroPosX - 1] != 1) {
+        heroPosX--;
+      }
+    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
       heroImage = "./Assets/hero-right.png";
-      heroPosX++;
+      if (board[heroPosY][heroPosX + 1] != 1) {
+        heroPosX++;
+      }
     }
     // and redraw to have a new picture with the new coordinates
     repaint();
