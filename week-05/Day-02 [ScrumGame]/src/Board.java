@@ -9,6 +9,7 @@ public class Board extends JComponent implements KeyListener {
   Graphics g;
   int heroPosX;
   int heroPosY;
+  String heroImage;
   int[][] board = {
       {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
       {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
@@ -23,6 +24,7 @@ public class Board extends JComponent implements KeyListener {
       {0, 1, 0, 1, 0, 1, 0, 0, 0, 0}};
 
   public Board() {
+    heroImage = "./Assets/hero-down.png";
     heroPosX = 0;
     heroPosY = 0;
 
@@ -50,7 +52,7 @@ public class Board extends JComponent implements KeyListener {
         }
       }
     }
-    PositionedImage hero = new PositionedImage("./Assets/hero-down.png", heroPosX, heroPosY);
+    PositionedImage hero = new PositionedImage(heroImage, heroPosX, heroPosY);
     hero.draw(graphics);
   }
 
@@ -70,12 +72,17 @@ public class Board extends JComponent implements KeyListener {
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
     if (e.getKeyCode() == KeyEvent.VK_UP && (board[heroPosY - 1][heroPosX] != 1)) {
+      heroImage = "./Assets/hero-up.png";
       heroPosY--;
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN && (board[heroPosY + 1][heroPosX] != 1)) {
+      heroImage = "./Assets/hero-down.png";
+
       heroPosY++;
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT && (board[heroPosY][heroPosX - 1] != 1)) {
+      heroImage = "./Assets/hero-left.png";
       heroPosX--;
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && (board[heroPosY][heroPosX + 1] != 1)) {
+      heroImage = "./Assets/hero-right.png";
       heroPosX++;
     }
     // and redraw to have a new picture with the new coordinates
