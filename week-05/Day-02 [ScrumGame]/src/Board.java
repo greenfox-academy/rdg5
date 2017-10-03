@@ -52,8 +52,9 @@ public class Board extends JComponent implements KeyListener {
         PositionedImage wall = new PositionedImage("./Assets/wall.png", i * 72, j * 72);
         if (board[i][j] == 0) {
           floor.draw(graphics);
+        } else {
+          wall.draw(graphics);
         }
-        else wall.draw(graphics);
       }
     }
   }
