@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -6,26 +5,25 @@ import java.awt.event.KeyListener;
 
 public class Board extends JComponent implements KeyListener {
 
+  final static int SIZE = 72;
   Graphics g;
   int heroPosX;
   int heroPosY;
   String heroImage;
-  int[][] board = getInts();
+  int[][] board = {
 
-  private int[][] getInts() {
-    return new int[][]{
-        {0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1},
-        {0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1},
-        {0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1},
-        {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
-        {1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1},
-        {0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1},
-        {0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1},
-        {0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1},
-        {0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1},
-        {0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1}
-    };
-  }
+      {0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1},
+      {0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1},
+      {0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1},
+      {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
+      {1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1},
+      {0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1},
+      {0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1},
+      {0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1},
+      {0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1},
+      {0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1}
+  };
+
 
   public Board() {
     heroImage = "./Assets/hero-down.png";

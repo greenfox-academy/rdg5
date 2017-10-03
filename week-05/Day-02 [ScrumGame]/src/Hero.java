@@ -2,22 +2,11 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Hero extends Character implements KeyListener{
+public class Hero extends Character{
 
+  public Hero(){
 
-  @Override
-  public void keyTyped(KeyEvent e) {
-
-  }
-
-  @Override
-  public void keyPressed(KeyEvent e) {
-
-  }
-
-  @Override
-  public void keyReleased(KeyEvent e) {
-
+//    position x,y should be 0,0
 
   }
 }
