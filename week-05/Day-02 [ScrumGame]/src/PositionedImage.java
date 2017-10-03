@@ -20,9 +20,16 @@ public class PositionedImage {
 
   }
 
+  public PositionedImage(String s) {
+    String heroUp;
+    String heroDown;
+    String heroLeft;
+    String heroRight;
+  }
+
   public void draw(Graphics graphics) {
     if (image != null) {
-      graphics.drawImage(image, posY, posX, null);
+      graphics.drawImage(image, posX *72, posY *72, null);
     }
   }
 }

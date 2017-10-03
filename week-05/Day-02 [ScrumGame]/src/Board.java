@@ -6,13 +6,25 @@ import java.awt.event.KeyListener;
 
 public class Board extends JComponent implements KeyListener {
 
-  int testBoxX;
-  int testBoxY;
-  static int BOARD_SIZE = 10;
+  Graphics g;
+  int heroPosX;
+  int heroPosY;
+  int[][] board = {
+      {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
+      {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
+      {0, 1, 1, 1, 0, 1, 0, 1, 1, 0},
+      {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+      {1, 1, 1, 1, 0, 1, 1, 1, 1, 0},
+      {0, 1, 0, 1, 0, 0, 0, 0, 1, 0},
+      {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
+      {0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
+      {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
+      {0, 0, 0, 1, 0, 1, 1, 0, 1, 0},
+      {0, 1, 0, 1, 0, 1, 0, 0, 0, 0}};
 
   public Board() {
-    testBoxX = 300;
-    testBoxY = 300;
+    heroPosX = 0;
+    heroPosY = 0;
 
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
@@ -23,33 +35,14 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-//    graphics.fillRect(testBoxX, testBoxY, 100, 100);
+    graphics.fillRect(heroPosX, heroPosY, 100, 100);
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
 
-//    PositionedImage image = new PositionedImage("./Assets/floor.png", 0, 0);
-//    for (int i = 0; i < 720 ; i++) {
-//      for (int j = 0; j < 720 ; j++) {
-//        PositionedImage image = new PositionedImage("./ass")
-//
-//      }
-    int[][] board = {
-        {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
-        {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
-        {0, 1, 1, 1, 0, 1, 0, 1, 1, 0},
-        {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-        {1, 1, 1, 1, 0, 1, 1, 1, 1, 0},
-        {0, 1, 0, 1, 0, 0, 0, 0, 1, 0},
-        {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
-        {0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
-        {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
-        {0, 0, 0, 1, 0, 1, 1, 0, 1, 0},
-        {0, 1, 0, 1, 0, 1, 0, 0, 0, 0}};
-
     for (int i = 0; i < 10; i++) {
       for (int j = 0; j < 10; j++) {
-        PositionedImage floor = new PositionedImage("./Assets/floor.png", i * 72, j * 72);
-        PositionedImage wall = new PositionedImage("./Assets/wall.png", i * 72, j * 72);
+        PositionedImage floor = new PositionedImage("./Assets/floor.png", j, i);
+        PositionedImage wall = new PositionedImage("./Assets/wall.png", j, i);
         if (board[i][j] == 0) {
           floor.draw(graphics);
         } else {
@@ -57,6 +50,8 @@ public class Board extends JComponent implements KeyListener {
         }
       }
     }
+    PositionedImage hero = new PositionedImage("./Assets/hero-down.png", heroPosX, heroPosY);
+    hero.draw(graphics);
   }
 
 
@@ -74,10 +69,14 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
-    if (e.getKeyCode() == KeyEvent.VK_UP) {
-      testBoxY -= 100;
-    } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      testBoxY += 100;
+    if (e.getKeyCode() == KeyEvent.VK_UP && (board[heroPosY - 1][heroPosX] != 1)) {
+      heroPosY--;
+    } else if (e.getKeyCode() == KeyEvent.VK_DOWN && (board[heroPosY + 1][heroPosX] != 1)) {
+      heroPosY++;
+    } else if (e.getKeyCode() == KeyEvent.VK_LEFT && (board[heroPosY][heroPosX - 1] != 1)) {
+      heroPosX--;
+    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && (board[heroPosY][heroPosX + 1] != 1)) {
+      heroPosX++;
     }
     // and redraw to have a new picture with the new coordinates
     repaint();
