@@ -1,3 +1,4 @@
+import java.rmi.server.Skeleton;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -6,7 +7,7 @@ import java.awt.event.KeyListener;
 public class Board extends JComponent implements KeyListener {
 
   Hero gyula;
-  Character skeleton1, skeleton2, skeleton3;
+  Monster skel1, skel2, skel3;
   int[][] board = {
 
       {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
@@ -24,9 +25,9 @@ public class Board extends JComponent implements KeyListener {
 
   public Board() {
     gyula = new Hero();
-//    skeleton1 = new Skeleton();
-//    skeleton2 = new Skeleton();
-//    skeleton3 = new Skeleton();
+    skel1 = new Monster();
+    skel2 = new Monster();
+    skel3 = new Monster();
 
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
@@ -53,16 +54,11 @@ public class Board extends JComponent implements KeyListener {
     }
     gyula.draw(graphics);
 
-//    PositionedImage skel1 = new PositionedImage(skeleton1.image, skeleton1.posX, skeleton1.posY);
-//    skel1.draw(graphics);
-//
-//     PositionedImage skel2 = new PositionedImage(skeleton2.image, skeleton2.posX,
-//        skeleton2.posY);
-//    skel2.draw(graphics);
-//
-//    PositionedImage skel3 = new PositionedImage(skeleton3.image, skeleton3.posX,
-//        skeleton3.posY);
-//    skel3.draw(graphics);
+    skel1.draw(graphics);
+
+    skel2.draw(graphics);
+
+    skel3.draw(graphics);
   }
 
 
