@@ -1,6 +1,10 @@
-public class Character extends Board {
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import javax.swing.JComponent;
 
-  int maxHp, currentHp, dp, sp;
+public class Character extends JComponent {
+
+  int maxHp, currentHp, dp, sp, posX, posY;
 
 
   public boolean isAlive() {    //placeholder for the hp thingy
