@@ -12,9 +12,7 @@ public class Character extends PositionedImage {
   }
 
 
-
   public void moveUp(int[][] board) {
-
 
     if (posY != 0 && board[posY - 1][posX] != 1) {
       posY--;
@@ -37,6 +35,11 @@ public class Character extends PositionedImage {
     if (posX != 9 && board[posY][posX + 1] != 1) {
       posX++;
     }
+  }
+
+  public void reposition() {
+    this.posX = (int) (Math.random() * 10);
+    this.posY = (int) (Math.random() * 10);
   }
 
 }

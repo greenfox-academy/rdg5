@@ -1,4 +1,3 @@
-import java.rmi.server.Skeleton;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -7,7 +6,7 @@ import java.awt.event.KeyListener;
 public class Board extends JComponent implements KeyListener {
 
   Hero gyula;
-  Monster skel1, skel2, skel3;
+  private Monster skel1, skel2, skel3;
   int[][] board = {
 
       {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
@@ -54,13 +53,21 @@ public class Board extends JComponent implements KeyListener {
     }
     gyula.draw(graphics);
 
+    while (board[skel1.posY][skel1.posX] != 0) {
+      skel1.reposition();
+    }
     skel1.draw(graphics);
 
+    while (board[skel2.posY][skel2.posX] != 0) {
+      skel2.reposition();
+    }
     skel2.draw(graphics);
 
+    while (board[skel3.posY][skel3.posX] != 0) {
+      skel3.reposition();
+    }
     skel3.draw(graphics);
   }
-
 
   @Override
   public void keyTyped(KeyEvent e) {
@@ -72,11 +79,10 @@ public class Board extends JComponent implements KeyListener {
 
   }
 
-
   @Override
 
   public void keyReleased(KeyEvent e) {
-    // When the up or down keys hit, we change the position of our box
+
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       gyula.turnUp();
       gyula.moveUp(board);

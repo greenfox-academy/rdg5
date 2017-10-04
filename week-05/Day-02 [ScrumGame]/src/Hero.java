@@ -26,5 +26,4 @@ public class Hero extends Character {
     readFromFile(heroRight);
   }
 
-
 }
