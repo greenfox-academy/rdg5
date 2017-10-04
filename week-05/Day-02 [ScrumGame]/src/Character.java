@@ -8,13 +8,16 @@ public class Character extends JComponent {
   String image;
 
 
-  public boolean isAlive() {    //placeholder for the hp thingy
-    if (this.currentHp >= 1) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+//  public boolean isAlive() {    //placeholder for the hp thingy
+//    if (this.currentHp >= 1) {
+//      return true;
+//    } else {
+//      return false;
+//    }
+//  }
+//  public void checkBoundary(){
+//    posX
+//  }
 
 
 }

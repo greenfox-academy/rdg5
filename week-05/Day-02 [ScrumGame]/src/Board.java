@@ -10,16 +10,16 @@ public class Board extends JComponent implements KeyListener {
   Character gyula;
   int[][] board = {
 
-      {0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1},
-      {0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1},
-      {0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1},
-      {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
-      {1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1},
-      {0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1},
-      {0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1},
-      {0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1},
-      {0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1},
-      {0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1}
+      {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
+      {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
+      {0, 1, 1, 1, 0, 1, 0, 1, 1, 0},
+      {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+      {1, 1, 1, 1, 0, 1, 1, 1, 1, 0},
+      {0, 1, 0, 1, 0, 0, 0, 0, 1, 0},
+      {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
+      {0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
+      {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
+      {0, 0, 0, 1, 0, 1, 1, 0, 0, 0}
   };
 
 
@@ -72,27 +72,28 @@ public class Board extends JComponent implements KeyListener {
     // When the up or down keys hit, we change the position of our box
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       gyula.image = "./Assets/hero-up.png";
-      if (board[gyula.posY - 1][gyula.posX] != 1) {
+      if (gyula.posY != 0 && board[gyula.posY - 1][gyula.posX] != 1) {
         gyula.posY--;
       }
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
       gyula.image = "./Assets/hero-down.png";
-      if (board[gyula.posY + 1][gyula.posX] != 1) {
+      if (gyula.posY != 9 && board[gyula.posY + 1][gyula.posX] != 1) {
         gyula.posY++;
       }
 
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
       gyula.image = "./Assets/hero-left.png";
-      if (board[gyula.posY][gyula.posX - 1] != 1) {
+      if (gyula.posX != 0 && board[gyula.posY][gyula.posX - 1] != 1) {
         gyula.posX--;
       }
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
       gyula.image = "./Assets/hero-right.png";
-      if (board[gyula.posY][gyula.posX + 1] != 1) {
+      if (gyula.posX != 9 && board[gyula.posY][gyula.posX + 1] != 1) {
         gyula.posX++;
       }
     }
     // and redraw to have a new picture with the new coordinates
     repaint();
   }
+
 }
