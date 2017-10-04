@@ -11,7 +11,10 @@ public class Character extends PositionedImage {
     super(filename, posX, posY);
   }
 
+
+
   public void moveUp(int[][] board) {
+
 
     if (posY != 0 && board[posY - 1][posX] != 1) {
       posY--;

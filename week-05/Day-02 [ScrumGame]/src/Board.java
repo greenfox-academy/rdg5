@@ -82,12 +82,16 @@ public class Board extends JComponent implements KeyListener {
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
     if (e.getKeyCode() == KeyEvent.VK_UP) {
+      gyula.turnUp();
       gyula.moveUp(board);
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+      gyula.turnDown();
       gyula.moveDown(board);
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+      gyula.turnLeft();
       gyula.moveLeft(board);
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+      gyula.turnRight();
       gyula.moveRight(board);
     }
     repaint();
