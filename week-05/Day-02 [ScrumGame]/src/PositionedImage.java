@@ -10,7 +10,8 @@ public class PositionedImage {
 
   //ImageLoader
   BufferedImage image;
-  int posX, posY;
+   int posX;
+   int posY;
 
   public PositionedImage(String filename, int posX, int posY) {
 

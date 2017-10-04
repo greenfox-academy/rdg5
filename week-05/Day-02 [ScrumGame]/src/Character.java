@@ -1,23 +1,41 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import javax.swing.JComponent;
-
-public class Character extends JComponent {
-
-  int maxHp, currentHp, dp, sp, posX, posY;
-  String image;
 
 
-//  public boolean isAlive() {    //placeholder for the hp thingy
-//    if (this.currentHp >= 1) {
-//      return true;
-//    } else {
-//      return false;
-//    }
-//  }
-//  public void checkBoundary(){
-//    posX
-//  }
+public class Character extends PositionedImage {
 
+  int maxHp, currentHp, dp, sp;
+
+
+  public Character(String filename, int posX, int posY) {
+    super(filename, posX, posY);
+  }
+
+  public void moveUp(int[][] board) {
+
+    if (posY != 0 && board[posY - 1][posX] != 1) {
+      posY--;
+    }
+  }
+
+  public void moveDown(int[][] board) {
+    if (posY != 9 && board[posY + 1][posX] != 1) {
+      posY++;
+    }
+  }
+
+  public void moveLeft(int[][] board) {
+    if (posX != 0 && board[posY][posX - 1] != 1) {
+      posX--;
+    }
+  }
+
+  public void moveRight(int[][] board) {
+    if (posX != 9 && board[posY][posX + 1] != 1) {
+      posX++;
+    }
+  }
 
 }
+
+
