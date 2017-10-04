@@ -5,6 +5,7 @@ import javax.swing.JComponent;
 public class Character extends JComponent {
 
   int maxHp, currentHp, dp, sp, posX, posY;
+  String image;
 
 
   public boolean isAlive() {    //placeholder for the hp thingy

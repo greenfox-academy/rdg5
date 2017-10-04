@@ -7,11 +7,7 @@ public class Board extends JComponent implements KeyListener {
 
   final static int SIZE = 72;
   Graphics g;
-  int heroPosX;
-  int heroPosY;
-  String heroImage;
-  Character gyula = new Hero();
-
+  Character gyula;
   int[][] board = {
 
       {0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1},
@@ -28,9 +24,7 @@ public class Board extends JComponent implements KeyListener {
 
 
   public Board() {
-    heroImage = "./Assets/hero-down.png";
-    heroPosX = 0;
-    heroPosY = 0;
+    gyula = new Hero();
 
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
@@ -41,7 +35,7 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-    graphics.fillRect(heroPosX, heroPosY, 100, 100);
+    graphics.fillRect(gyula.posX, gyula.posY, 100, 100);
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
 
@@ -56,7 +50,7 @@ public class Board extends JComponent implements KeyListener {
         }
       }
     }
-    PositionedImage hero = new PositionedImage(gyula.heroDown, heroPosX, heroPosY);
+    PositionedImage hero = new PositionedImage(gyula.image, gyula.posX, gyula.posY);
     hero.draw(graphics);
   }
 
@@ -77,29 +71,28 @@ public class Board extends JComponent implements KeyListener {
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-      heroImage = hero.Down;
-      if (board[heroPosY - 1][heroPosX] != 1) {
-        heroPosY--;
+      gyula.image = "./Assets/hero-up.png";
+      if (board[gyula.posY - 1][gyula.posX] != 1) {
+        gyula.posY--;
       }
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-      heroImage = "./Assets/hero-down.png";
-      if (board[heroPosY + 1][heroPosX] != 1) {
-        heroPosY++;
+      gyula.image = "./Assets/hero-down.png";
+      if (board[gyula.posY + 1][gyula.posX] != 1) {
+        gyula.posY++;
       }
 
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-      heroImage = "./Assets/hero-left.png";
-      if (board[heroPosY][heroPosX - 1] != 1) {
-        heroPosX--;
+      gyula.image = "./Assets/hero-left.png";
+      if (board[gyula.posY][gyula.posX - 1] != 1) {
+        gyula.posX--;
       }
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-      heroImage = "./Assets/hero-right.png";
-      if (board[heroPosY][heroPosX + 1] != 1) {
-        heroPosX++;
+      gyula.image = "./Assets/hero-right.png";
+      if (board[gyula.posY][gyula.posX + 1] != 1) {
+        gyula.posX++;
       }
     }
     // and redraw to have a new picture with the new coordinates
     repaint();
   }
-
 }
