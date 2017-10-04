@@ -7,6 +7,7 @@ public class Board extends JComponent implements KeyListener {
 
   Hero gyula;
   private Monster skel1, skel2, skel3;
+  private Boss boss1;
   int[][] board = {
 
       {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
@@ -24,6 +25,7 @@ public class Board extends JComponent implements KeyListener {
 
   public Board() {
     gyula = new Hero();
+    boss1 = new Boss();
     skel1 = new Monster();
     skel2 = new Monster();
     skel3 = new Monster();
@@ -67,6 +69,11 @@ public class Board extends JComponent implements KeyListener {
       skel3.reposition();
     }
     skel3.draw(graphics);
+
+    while (board[boss1.posY][boss1.posX] != 0) {
+      boss1.reposition();
+    }
+    boss1.draw(graphics);
   }
 
   @Override
