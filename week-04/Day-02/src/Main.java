@@ -7,19 +7,9 @@ public class Main {
     Aircraft pista = new F16();
     Aircraft jóska = new F35();
 
-    System.out.println(pista.getType());
-    System.out.println("VS");
-    System.out.println(jóska.getType());
+    Carrier gizi = new Carrier();
+    gizi.addAircraft(new Aircraft("f16"));
 
-    System.out.println("\n");
-    System.out.println("Let's get ready to RUUMBLEEE");
-    System.out.println("\n");
-
-
-    pista.fight(jóska);
-    System.out.println(pista.getStatus());
-    pista.refill(500);
-    System.out.println(pista.getStatus());
 
 //    pista.refill(300);
 //    System.out.println(pista.type);

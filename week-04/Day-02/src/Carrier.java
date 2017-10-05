@@ -6,6 +6,8 @@ public class Carrier {
   int carrierTotalAmmo;
   int hp;
   int carrierAmmo;
+  F16 f16;
+  F35 f35;
 
   public Carrier() {
     carrierTotalAmmo = 1500;
@@ -19,7 +21,13 @@ public class Carrier {
   }
 
   public void addAircraft(Aircraft type) {
-    aircrafts.add(type);
+    if (type.equals("f16")) {
+      aircrafts.add(f16);
+      System.out.println("A new " + type + " aircraft has been added to your carrier");
+    } else if (type.equals("f35")) {
+      aircrafts.add(f35);
+      System.out.println("A new " + type + " aircraft has been added to your carrier");
+    }
   }
 
   public void fill() {
@@ -27,7 +35,7 @@ public class Carrier {
       carrierAmmo--;
       a.refill(a.currentAmmo);
       if (carrierTotalAmmo < a.maxAmmo) {
-        
+
       }
     }
   }
