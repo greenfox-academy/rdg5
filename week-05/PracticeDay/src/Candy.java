@@ -1,5 +1,6 @@
-package PACKAGE_NAME;
+public class Candy extends Dessert {
 
-public class Candy {
-
+  public Candy() {
+  super(20,10);
+  }
 }

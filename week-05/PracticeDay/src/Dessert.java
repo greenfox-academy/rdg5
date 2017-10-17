@@ -1,5 +1,14 @@
-package PACKAGE_NAME;
+public class Dessert {
 
-public class Sweets {
+  double price;
+  int sugar;
 
+  public Dessert(double price, int sugar) {
+    this.price = price;
+    this.sugar = sugar;
+  }
+
+  public void raisePrice(int percentage) {
+    price += price * percentage / 100;
+  }
 }

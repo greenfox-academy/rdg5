@@ -1,5 +1,6 @@
-package PACKAGE_NAME;
+public class Lollipop extends Dessert {
 
-public class Lollipop {
-
+  public Lollipop() {
+    super(10, 5);
+  }
 }
