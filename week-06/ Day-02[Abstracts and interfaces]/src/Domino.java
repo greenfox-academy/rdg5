@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Domino implements Comparable<Domino> {
+public class Domino implements Comparable<Domino>, Printable {
 
   private final int[] values;
 
@@ -11,6 +11,7 @@ public class Domino implements Comparable<Domino> {
   public int[] getValues() {
     return values;
   }
+
 
   @Override
   public String toString() {
@@ -34,5 +35,10 @@ public class Domino implements Comparable<Domino> {
         return 0;
       }
     }
+  }
+
+  @Override
+  public void printAllFields() {
+    System.out.println(values[0] + " , " + values[1]);
   }
 }

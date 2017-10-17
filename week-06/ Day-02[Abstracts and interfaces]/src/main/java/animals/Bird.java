@@ -23,5 +23,5 @@ public class Bird extends Animal {
 
     return "want a child from an egg!";
   }
-  
+
 }
