@@ -21,5 +21,5 @@ public class Violin extends StringedInstrument {
     System.out.printf(" Violin, a " + numberOfStrings + "-stringed instrument that ");
     sound();
   }
-  
+
 }
