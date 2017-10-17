@@ -35,10 +35,10 @@ public class Gnirts implements CharSequence {
 
   @Override
   public CharSequence subSequence(int start, int end) {
-    char ch[] = forTehWinz.toCharArray();
+    char sChar[] = forTehWinz.toCharArray();
     String reversed = "";
-    for (int i = ch.length - 1; i >= 0; i--) {
-      reversed += ch[i];
+    for (int i = sChar.length - 1; i >= 0; i--) {
+      reversed += sChar[i];
     }
     return reversed.subSequence(start, end);
   }

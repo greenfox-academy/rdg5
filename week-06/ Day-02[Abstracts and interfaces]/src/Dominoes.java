@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Dominoes{
+public class Dominoes {
 
   public static void main(String[] args) {
     List<Domino> dominoes = initializeDominoes();
@@ -42,7 +42,6 @@ public class Dominoes{
     dominoes.add(new Domino(7, 1));
     return dominoes;
   }
-
 
 }
 
