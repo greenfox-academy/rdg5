@@ -77,7 +77,20 @@ gradle-app.setting
 !gradle-wrapper.jar
 
 # Cache of project
+
+
 .gradletasknamecache
+
+
+.idea/
+out
+
+*.xml
+
+*.iml
+
+
+.gf.json
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
