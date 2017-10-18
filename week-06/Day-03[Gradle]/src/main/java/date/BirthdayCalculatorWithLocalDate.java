@@ -1,8 +1,12 @@
 package date;
 
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+
 import java.time.LocalDate;
+import java.time.MonthDay;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
+import javax.swing.text.DateFormatter;
 
 public class BirthdayCalculatorWithLocalDate implements date.BirthdayCalculator<LocalDate> {
 
@@ -16,7 +20,8 @@ public class BirthdayCalculatorWithLocalDate implements date.BirthdayCalculator<
   @Override
   public String printMonthAndDay(LocalDate date) {
     // TODO - return the date formatted: month & day (MM. dd.)
-    return null;
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM. dd.");
+    return date.format(formatter);
   }
 
   @Override
