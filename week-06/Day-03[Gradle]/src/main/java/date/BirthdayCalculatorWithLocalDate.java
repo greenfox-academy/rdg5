@@ -4,7 +4,9 @@ import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 
 import java.time.LocalDate;
 import java.time.MonthDay;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 import javax.swing.text.DateFormatter;
 
@@ -37,14 +39,27 @@ public class BirthdayCalculatorWithLocalDate implements date.BirthdayCalculator<
   @Override
   public int calculateAgeInYears(LocalDate birthday) {
     // TODO - return how many years age the input date 'birthday' was
-    return 0;
+    int years = birthday.getYear();
+    int now = LocalDate.now().getYear();
+
+    return now - years;
+
   }
 
   @Override
   public int calculateDaysToNextAnniversary(LocalDate date) {
     // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)
-    return 0;
+    LocalDate today = LocalDate.now();
+    if (today.getDayOfYear() == date.getDayOfYear()) {
+      return 0;
+    } else if (today.getDayOfYear() > date.getDayOfYear()) {
+      return LocalDate.of(today.getDayOfYear(), 12, 31).getDayOfYear() - today.getDayOfYear() + date
+          .getDayOfYear();
+    } else {
+      return date.getDayOfYear() - today.getDayOfYear();
+    }
   }
+
 
   public static void main(String[] args) {
     new date.BirthdayCalculatorWithLocalDate().run();
