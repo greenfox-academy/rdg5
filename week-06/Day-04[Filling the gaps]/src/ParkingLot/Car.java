@@ -19,6 +19,7 @@ public class Car {
     type = TYPE.values()[typeIndex];
     color = COLOR.values()[colorIndex];
   }
+  
 }
 
 
