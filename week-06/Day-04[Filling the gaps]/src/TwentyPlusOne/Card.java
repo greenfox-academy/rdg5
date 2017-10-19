@@ -22,7 +22,6 @@ public class Card {
 
     Rank(int value) {
       this.value = value;
-
     }
   }
 

@@ -18,7 +18,6 @@ public class Deck {
 
   public void shuffleDeck() {
     Collections.shuffle(deckOfCards);
-
   }
 
   public Card pull(int pullCard) {
@@ -28,7 +27,6 @@ public class Deck {
     Card cardDrawn = deckOfCards.get(pullCard);
     deckOfCards.remove(pullCard);
     return cardDrawn;
-
   }
 
   public Card pullFirst() {
@@ -40,6 +38,7 @@ public class Deck {
   }
 
   public Card pullRandom() {
-    return  deckOfCards.get ((int) Math.random() * deckOfCards.size());
+    return deckOfCards.get((int) Math.random() * deckOfCards.size());
   }
+
 }
