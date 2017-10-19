@@ -1,14 +1,18 @@
 package ParkingLot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ParkingLot {
 
-  ArrayList<String> ParkingLot;
+  List<Car> carsInLot;
+  Car newCar;
 
-  public ParkingLot(ArrayList<String> parkingLot) {
-    ParkingLot = parkingLot;
-    parkingLot = Math.random()
+  public ParkingLot(int numberOfCars) {
+    carsInLot = new ArrayList<>();
+    for (int i=0; i < numberOfCars; i++) {
+      newCar = new Car();
+      carsInLot.add(newCar);
+    }
   }
-
 }

@@ -1,7 +1,5 @@
 package ParkingLot;
 
-import com.sun.deploy.security.ValidationState.TYPE;
-
 public class Car {
 
   public enum TYPE {
@@ -22,3 +20,5 @@ public class Car {
     color = COLOR.values()[colorIndex];
   }
 }
+
+
