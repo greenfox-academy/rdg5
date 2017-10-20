@@ -12,22 +12,26 @@ public class Game {
 
     Scanner scanner = new Scanner(System.in);
 
-    System.out.println("Greetings. Let the games begin!");
-    System.out.println("Do you want to draw a card? y/n ");
-
-    if (scanner.nextLine().equals("n")) {
-      System.out.println("You suck! Goodbye!");
-    }
-    if (scanner.nextLine().equals("y")){
-      System.out.println("Oko, we shall start!");
-    }
+    System.out.println("Greetings. You are up against Jóska. Press y to begin!");
 
     while (playerScore <= 21 && scanner.nextLine().equals("y")) {
-      System.out.println("Your score is: " + playerScore + " Do you want to draw another card?");
       playerScore += d.pullFirst().getValue();
-      if (playerScore > 21 ) {
+      if (playerScore > 21) {
         break;
       }
+      System.out.println("Your score is: " + playerScore + " Do you want to draw another card?");
+    }
+
+    if (playerScore > 21) {
+      System.out
+          .println("You lost, you suck, and yo mama so dumb she makes Donald Trump look smart!");
+    } else if (playerScore < opponentScore) {
+      System.out.println("Your score is " + playerScore + " and Jóska's score is " + opponentScore
+          + " seems like you lost.");
+    } else {
+      System.out.println(
+          "Jóska's score is " + opponentScore + ". "
+              + "Seems like you won. Perhaps you don't suck that much.");
     }
 
   }
