@@ -1,16 +1,16 @@
-  package TwentyPlusOne;
+package twentyplusone;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
 
-  private static Deck playingDeck;
+  private static Deck deck;
   private static ArrayList<Card> playerHand;
 
   public static void main(String[] args) {
-    playingDeck = new Deck();
-    playingDeck.shuffleDeck();
+    deck = new Deck();
+    deck.shuffleDeck();
     playerHand = new ArrayList<>();
     drawCards(2);
     int houseValue = (int) (Math.random() * ((21 - 15) + 1)) + 15;
@@ -26,24 +26,24 @@ public class Game {
         drawCards(1);
       } else if (choice.equals("s")) {
         if (getHandValue() <= houseValue) {
-          System.out.println("Dr.Gregory House has " + houseValue
+          System.out.println("Hugh Laurie has " + houseValue
               + " points. You are a terrible player and yo mamma so stupid, she thought Spotify was a stain remover!");
           break;
         } else {
           System.out.println(
-              "You win with " + getHandValue() + " points, dr.Gregory House had " + houseValue
+              "You win with " + getHandValue() + " points, Hugh Laurie had " + houseValue
                   + " points.");
           break;
         }
       } else if (choice.equals("r")) {
-        playingDeck.shuffleDeck();
+        deck.shuffleDeck();
         System.out.println("Deck is shuffled");
       }
     }
     if (getHandValue() == 21 && getHandValue() > houseValue) {
       System.out.println(
           "You won with 21! How cool is this? You were able to beat a 79 line program. Go home you sucker."
-              + "Oh and Yo mama so stupid she thinks menopause is a button on a VCR");
+              + " Oh and Yo mama so stupid she thinks menopause is a button on a VCR");
     } else if (getHandValue() == 21 && getHandValue() < houseValue) {
       System.out.println("House wins with " + houseValue
           + " points. How can you be so bad? If I were you I'd donate my brain to the museum.");
@@ -59,7 +59,7 @@ public class Game {
 
   private static void drawCards(int num) {
     for (int i = 0; i < num; i++) {
-      playerHand.add(playingDeck.pullFirst());
+      playerHand.add(deck.pullFirst());
     }
   }
 
@@ -69,7 +69,6 @@ public class Game {
       count += card.getValue();
     }
     if (count > 21) {
-      // Check for Aces
       for (Card card : playerHand) {
         if (card.getValue() == 11) {
           count -= 10;

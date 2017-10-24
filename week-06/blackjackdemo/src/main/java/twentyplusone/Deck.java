@@ -1,4 +1,4 @@
-package TwentyPlusOne;
+package twentyplusone;
 
 import java.util.ArrayList;
 import java.util.Collections;
