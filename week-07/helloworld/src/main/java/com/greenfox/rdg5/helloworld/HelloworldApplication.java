@@ -14,9 +14,9 @@ public class HelloworldApplication {
 		SpringApplication.run(HelloworldApplication.class, args);
 	}
 
-	@RequestMapping(value = "/hello")
-	@ResponseBody
-	public String hello(){
-		return "Hello World!";
-	}
+//	@RequestMapping(value = "/hello")
+//	@ResponseBody
+//	public String hello(){
+//		return "Hello World!";
+//	}
 }

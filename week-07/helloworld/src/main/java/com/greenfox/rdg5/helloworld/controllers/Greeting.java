@@ -1,7 +1,7 @@
 package com.greenfox.rdg5.helloworld.controllers;
 
 public class Greeting {
-  long id;
+   long id;
   String content;
 
   public Greeting(long id, String content) {
