@@ -2,6 +2,7 @@ package com.greenfox.rdg5.helloworld.controllers;
 
 import com.greenfox.rdg5.helloworld.differentLanguages;
 import java.util.ArrayList;
+import java.util.Random;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HelloAllWorldController {
-
-  ArrayList<differentLanguages> listOfHellos = new ArrayList<>();
 
   String[] hellos = {"Mirëdita", "Ahalan", "Parev", "Zdravei", "Nei Ho", "Dobrý den", "Ahoj",
       "Goddag", "Goede dag, Hallo", "Hello", "Saluton", "Hei", "Bonjour",
@@ -21,28 +20,27 @@ public class HelloAllWorldController {
       "Sa-wat-dee", "Merhaba", "Selam", "Vitayu", "Xin chào", "Hylo", "Sut Mae", "Sholem Aleychem",
       "Sawubona"};
 
-  @RequestMapping("/languages")
-  public String helloInDifferentLanguages(
-      @RequestParam(value = "name", defaultValue = "y") String name, Model list) {
-
-    for (String hello : hellos) {
-      differentLanguages lang = new differentLanguages(hello + " " + name + " !", randomFontColor(),
+  @RequestMapping("/web/world")
+  public String helloInDifferentLanguages(Model model) {
+    ArrayList<differentLanguages> greetings = new ArrayList<>();
+    for (String language : hellos) {
+      long value = new Random().nextInt(22) + 20;
+      differentLanguages renameIt = new differentLanguages(value, getRandomColor(),
           randomFontSize());
-      listOfHellos.add(lang);
-
+      greetings.add(renameIt);
     }
-
-    return null;
-  }
-
-  private String randomFontColor() {
-
-    return null;
-  }
-
-  private int randomFontSize() {
-    return 0;
+    model.addAttribute("greetings", greetings);
+    return "hello";
   }
 
 
+  public String getRandomColor() {
+    Random random = new Random();
+    return String
+        .format(("#%02x%02x%02x"), random.nextInt(256), random.nextInt(256), random.nextInt(256));
+  }
+
+  public long randomFontSize() {
+    return 15;
+  }
 }

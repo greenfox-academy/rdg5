@@ -4,19 +4,21 @@ public class differentLanguages {
 
   String content;
   String color;
-  int fontSize;
+  long fontSize;
 
-  public differentLanguages(String content, String color, int fontSize) {
+  public differentLanguages(String content, String color, long fontSize) {
     this.content = content;
     this.color = color;
-    this.fontSize = fontSize;
+  }
+
+  public differentLanguages(long value, String randomColor, long fontSize) {
   }
 
   public String getContent() {
     return this.content;
   }
 
-  public int getFontSize() {
+  public long getFontSize() {
     return this.fontSize;
   }
 
