@@ -10,12 +10,13 @@
 <h1>Accounts</h1>
 <table>
   <tr>
+    <th align="left">Index</th>
     <th align="left">Name</th>
     <th align="left"> Balance</th>
-    <!--<th alig="left"> Currency</th>-->
     <th align="left">Type</th>
   </tr>
   <tr th:each="acc : ${accounts}">
+    <td th:text="${accStat.index}"></td>
     <td th:text="${acc.name}"></td>
     <td th:text="${acc.balance} + ' ' +  ${acc.currency}"></td>
     <td th:text="${acc.animalType}"></td>
