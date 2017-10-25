@@ -17,8 +17,13 @@ public class BankAccountController {
     model.addAttribute("name", simbaAccount.getName());
     model.addAttribute("balance", simbaAccount.getBalance());
     model.addAttribute("type", simbaAccount.getAnimalType());
-    model.addAttribute("currency",simbaAccount.getCurrency());
+    model.addAttribute("currency", simbaAccount.getCurrency());
     return "Exercise1";
+  }
+
+  @RequestMapping(value = "/enjoy")
+  public String enjoy() {
+    return "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>";
   }
 
 }
