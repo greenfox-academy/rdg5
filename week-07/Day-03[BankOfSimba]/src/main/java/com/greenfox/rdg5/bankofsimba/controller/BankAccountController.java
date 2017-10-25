@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BankAccountController {
 
   BankAccount simbaAccount = new BankAccount("Simba", 2000, "lion");
-
   ArrayList<BankAccount> accounts = new ArrayList<>();
 
   @RequestMapping(value = "/Exercise1")
@@ -18,6 +17,7 @@ public class BankAccountController {
     model.addAttribute("name", simbaAccount.getName());
     model.addAttribute("balance", simbaAccount.getBalance());
     model.addAttribute("type", simbaAccount.getAnimalType());
+    model.addAttribute("currency",simbaAccount.getCurrency());
     return "Exercise1";
   }
 
