@@ -34,6 +34,7 @@ public class BankAccountController {
   @RequestMapping(value = "/Exercise5")
   public String fillMultipleAccounts(Model model) {
     accounts.get(0).setKing();
+    accounts.get(3).setBadGuy();
     model.addAttribute("accounts", accounts);
     return "Exercise5";
   }
