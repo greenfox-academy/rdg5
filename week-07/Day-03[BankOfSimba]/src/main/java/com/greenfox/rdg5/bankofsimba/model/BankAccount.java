@@ -3,12 +3,12 @@ package com.greenfox.rdg5.bankofsimba.model;
 public class BankAccount {
 
   String name;
-  double Balance;
+  int balance;
   String animalType;
 
-  public BankAccount(String name, double balance, String animalType) {
+  public BankAccount(String name, int balance, String animalType) {
     this.name = name;
-    Balance = balance;
+    this.balance =  balance;
     this.animalType = animalType;
   }
 
@@ -17,7 +17,7 @@ public class BankAccount {
   }
 
   public double getBalance() {
-    return Balance;
+    return balance;
   }
 
   public String getAnimalType() {
