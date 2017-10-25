@@ -33,7 +33,10 @@ public class BankAccountController {
 
   @RequestMapping(value = "/Exercise5")
   public String fillMultipleAccounts(Model model) {
+    accounts.get(0).setKing();
     model.addAttribute("accounts", accounts);
     return "Exercise5";
   }
+
+
 }

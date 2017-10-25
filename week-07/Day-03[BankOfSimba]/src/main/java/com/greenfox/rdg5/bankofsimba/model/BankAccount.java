@@ -7,6 +7,16 @@ public class BankAccount {
   String animalType;
   String currency;
 
+  public boolean isKing() {
+    return isKing;
+  }
+
+  boolean isKing;
+
+  public void setKing() {
+    isKing = true;
+  }
+
   public String getCurrency() {
     return currency;
   }
@@ -16,6 +26,7 @@ public class BankAccount {
     this.balance =  balance;
     this.animalType = animalType;
     this.currency = "zebra";
+
   }
 
   public String getName() {

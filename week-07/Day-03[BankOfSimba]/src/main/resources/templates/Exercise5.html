@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+  <!--<style>-->
+    <!--.orange { color: orange }-->
+  <!--</style>-->
   <title>Thymeleaf Exercise #</title>
   <link rel="stylesheet" th:href="@{/style.css}"/>
   <meta charset="utf-8"/>
@@ -15,7 +18,7 @@
     <th align="left"> Balance</th>
     <th align="left">Type</th>
   </tr>
-  <tr th:each="acc : ${accounts}">
+  <tr th:each="acc : ${accounts}" th:style="${acc.isKing()} ? 'color: orange' ">
     <td th:text="${accStat.index}"></td>
     <td th:text="${acc.name}"></td>
     <td th:text="${acc.balance} + ' ' +  ${acc.currency}"></td>
