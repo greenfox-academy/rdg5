@@ -8,7 +8,7 @@ public class TwitterService implements MessageService {
 
   @Override
   public void sendMessage(String message, String address) {
-    System.out.println(message + " , " + address + " - sent via Twitter");
+    System.out.println("Tweet message: " + message + " - sent via Twitter");
   }
 
 }

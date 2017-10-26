@@ -9,7 +9,6 @@ import com.greenfox.rdg5.messageservice.service.TwitterService;
 @Configuration
 public class MessageConfiguration {
 
-
   public MessageService email() {
     return new EmailService();
   }
@@ -19,7 +18,7 @@ public class MessageConfiguration {
     return new TwitterService();
   }
 
-  public MessageProceeder proceeder(){
+  public MessageProceeder proceeder() {
     return new MessageProceeder();
   }
 
