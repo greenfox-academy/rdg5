@@ -27,7 +27,7 @@ public class HelloWorldApplication {
 
     MyColor myColor1 = pista.getBean(Black.class);
     myColor1.printColor();
-    
+
 
 
   }
