@@ -6,19 +6,19 @@
   <meta charset="utf-8"/>
 </head>
 <body>
-
 <ul>
   <li><a href="#">Information</a></li>
 </ul>
 
-<img src="/images/greenfox.png" alt="Mr.Fox" style="width:128px;height:128px;">
+<img src="/images/greenfox.png" alt="Mr.Fox" style="width:128px;height:128px;"></img>
 
-<p>This is Mr.Fox. Currently living on pizza and lemonade. He knows 2 tricks.</p>
-<h2> Known tricks</h2>
+<p th:text=" 'This is Mr.Fox. Currently living on pizza and lemonade. He knows 2 tricks.'"></p>
+<h2 th:text=" 'Known tricks'"></h2>
 <ul>
   <li>write HTML</li>
   <li>code in Java</li>
 
 </ul>
 </body>
+
 </html>
