@@ -8,5 +8,4 @@ public interface TodoRepository extends CrudRepository<Todo, Long> {
 //  @Autowired
 //  static void save() {
 //  }
-
 }
