@@ -1,7 +1,5 @@
 package com.greenfox.rdg5.messageservice.service;
 
-import org.springframework.stereotype.Service;
-
 public class EmailService implements MessageService {
 
 

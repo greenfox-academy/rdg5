@@ -9,14 +9,16 @@ import com.greenfox.rdg5.messageservice.service.TwitterService;
 @Configuration
 public class MessageConfiguration {
 
+  @Bean
   public MessageService email() {
     return new EmailService();
   }
 
-  @Bean
+
   public MessageService twitter() {
     return new TwitterService();
   }
+
 
   public MessageProceeder proceeder() {
     return new MessageProceeder();
