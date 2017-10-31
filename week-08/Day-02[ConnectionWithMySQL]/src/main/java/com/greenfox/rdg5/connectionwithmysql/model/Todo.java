@@ -10,6 +10,18 @@ import javax.persistence.Table;
 @Table(name = "todos")
 public class Todo {
 
+  public int getId() {
+    return id;
+  }
+
+  public boolean isUrgent() {
+    return isUrgent;
+  }
+
+  public boolean isDone() {
+    return isDone;
+  }
+
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   int id;
@@ -17,8 +29,10 @@ public class Todo {
   boolean isUrgent;
   boolean isDone;
 
-  public Todo(String title) {
+  public Todo(String title, boolean isUrgent, boolean isDone) {
     this.title = title;
+    this.isUrgent = isUrgent;
+    this.isDone = isDone;
 
   }
 
