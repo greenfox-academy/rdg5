@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Getting Started: Serving Web Content</title>
+  <title>Todo APP</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
@@ -11,6 +11,7 @@
   <li>Finish H2 workhop1</li>
   <li>Finish JPA workshop2</li>
   <li>Create CRUD project</li>
+  <li th:each="todo : ${todos}" th:text="${todo.getTitle()}"/>
 </ul>
 </body>
 </html>
