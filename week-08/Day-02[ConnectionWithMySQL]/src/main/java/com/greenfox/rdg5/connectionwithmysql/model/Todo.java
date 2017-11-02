@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Table(name = "todos")
 public class Todo {
 
-  public int getId() {
+  public Long getId() {
     return id;
   }
 
@@ -22,9 +22,13 @@ public class Todo {
     return isDone;
   }
 
+  public void setId(Long id) {
+    this.id = id;
+  }
+
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  int id;
+  Long id;
   String title;
   boolean isUrgent;
   boolean isDone;
@@ -46,5 +50,6 @@ public class Todo {
   public void setTitle(String title) {
     this.title = title;
   }
+
 
 }
