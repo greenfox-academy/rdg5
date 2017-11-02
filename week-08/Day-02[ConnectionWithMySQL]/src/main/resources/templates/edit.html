@@ -12,11 +12,13 @@
 
     <p>Title</p>
     <p><input type="text" th:field="*{title}" th:value="*{title}"/></p>
-    <!--<p><input type="checkbox" th:field="*{isUrgent}" th:value="*{isUrgent}"/></p>-->
-    <!--<p><input type="checkbox" th:field="*{isDone}" th:value="*{isDone}"/></p>-->
+    <p>Is it urgent?</p>
+    <p><input type="checkbox" name="Urgent" th:field="*{urgent}" th:value="*{urgent}"/></p>
+    <p>Is it done?</p>
+    <p><input type="checkbox" name="Done" th:field="*{done}" th:value="*{done}"/></p>
 
     <p>
-    <td><input type="submit" value="Submit"/></td>
+      <span><input type="submit" value="Submit"/></span>
     </p>
     <!--<input type="text" th:field="*{todo.isUrgent}"/>-->
     <!--<input type="text" th:field="*{todo.isDone}"/>-->
