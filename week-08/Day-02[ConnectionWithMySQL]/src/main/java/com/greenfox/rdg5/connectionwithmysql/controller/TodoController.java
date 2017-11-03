@@ -19,13 +19,6 @@ public class TodoController {
   @Autowired
   TodoRepository todoRepository;
 
-//  @RequestMapping(value = "/todo")
-//  public String todo() {
-//
-//    return "todoslist";
-//  }
-
-
   @RequestMapping(value = {"/", "/list"})
   public String list(Model model) {
     model.addAttribute("todos", todoRepository.findAll());
@@ -54,7 +47,6 @@ public class TodoController {
   public String saveEdited(@ModelAttribute Todo todo) {
     todoRepository.save(todo);
     return "redirect:/todo/";
-
   }
 
   @GetMapping(value = "/{id}/delete")

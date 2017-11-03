@@ -10,12 +10,14 @@ import javax.persistence.Table;
 @Table(name = "todos")
 public class Todo {
 
-  public void setUrgent(boolean urgent) {
+  public String setUrgent(boolean urgent) {
     this.urgent = urgent;
+    return urgent ? "yes" : "no";
   }
 
-  public void setDone(boolean done) {
+  public String setDone(boolean done) {
     this.done = done;
+    return done ? "yes" : "no";
   }
 
   public Long getId() {
