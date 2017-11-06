@@ -2,8 +2,7 @@ package com.greenfox.rdg5.reddit.controller;
 
 import com.greenfox.rdg5.reddit.model.Post;
 import com.greenfox.rdg5.reddit.repository.PostRepository;
-import com.greenfox.rdg5.reddit.service.PostVoting;
-import com.greenfox.rdg5.reddit.service.VoteConfig;
+import com.greenfox.rdg5.reddit.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +20,7 @@ public class PostController {
   PostRepository repo;
 
   @Autowired
-  PostVoting voting;
+  PostService voting;
 
 
   @RequestMapping(value = "/")

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-public class PostVoting {
+public class PostService {
 
   public void upvote(Post post) {
     post.setScore(post.getScore() + 1);
