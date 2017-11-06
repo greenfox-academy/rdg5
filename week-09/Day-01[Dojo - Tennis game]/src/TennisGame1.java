@@ -18,18 +18,27 @@ public class TennisGame1 implements TennisGame {
     }
   }
 
-  public String getScore() {
-    String uniqueResult = "";
-    if (player1.score == player2.score) {
-      if (player1.score >= 4) {
-        uniqueResult = "Deuce";
-      }
+  public String getScoreIfTie() {
+    String result;
+    if (player1.score >= 4) {
+      result = "Deuce";
+    } else {
       for (int i = 0; i < 4; i++) {
         if (player1.score == i) {
           player1.scoreAsText += namesForScores[i];
         }
       }
       player2.scoreAsText = "All";
+      result = player1.scoreAsText + "-" + player2.scoreAsText;
+    }
+    return result;
+  }
+
+  public String getScore() {
+    String uniqueResult = "";
+    if (player1.score == player2.score) {
+      return getScoreIfTie();
+
     } else if (player1.score >= 4 || player2.score >= 4) {
       int minusResult = player1.score - player2.score;
       if (minusResult == 1) {
@@ -55,8 +64,10 @@ public class TennisGame1 implements TennisGame {
     if (uniqueResult != "") {
       return uniqueResult;
     } else {
-      return player1.scoreAsText + "-" + player2.scoreAsText;
+      uniqueResult = player1.scoreAsText + "-" + player2.scoreAsText;
+    } return  uniqueResult;
     }
   }
 
-}
+
+
