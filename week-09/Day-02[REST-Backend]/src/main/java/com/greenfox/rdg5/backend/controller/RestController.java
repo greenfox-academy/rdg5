@@ -1,12 +1,12 @@
 package com.greenfox.rdg5.backend.controller;
 
+import com.greenfox.rdg5.backend.model.Greeting;
 import com.greenfox.rdg5.backend.model.NumberDoubled;
-import java.io.FileNotFoundException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -17,8 +17,18 @@ public class RestController {
     return nd;
   }
 
-  @ExceptionHandler(MissingServletRequestParameterException.class)
-  public ErrorHandler errorhandling() {
-    return new ErrorHandler("Please provide an input!");
+  @GetMapping(value = "/greeter")
+  public Greeting greeting(@RequestParam(value = "name") String name,
+      @RequestParam(value = "title") String title) {
+    Greeting greet = new Greeting("Oh, hi there " + name + ", my dear " + title + "!");
+    return greet;
   }
+
+  @ExceptionHandler(MissingServletRequestParameterException.class)
+  public hendlarOrrer handleMissingParams(MissingServletRequestParameterException ex) {
+    String name = ex.getParameterName();
+    return new hendlarOrrer("Please provide a " + name + "!");
+  }
+
+
 }

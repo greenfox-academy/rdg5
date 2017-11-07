@@ -1,10 +1,10 @@
 package com.greenfox.rdg5.backend.controller;
 
-public class ErrorHandler {
+public class hendlarOrrer {
 
   String error;
 
-  public ErrorHandler(String error) {
+  public hendlarOrrer(String error) {
     this.error = error;
   }
 
