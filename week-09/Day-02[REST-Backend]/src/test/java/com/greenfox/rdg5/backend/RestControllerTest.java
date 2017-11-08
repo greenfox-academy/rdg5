@@ -43,7 +43,7 @@ public class RestControllerTest {
   }
 
   @Test
-  public void doublingSuccesful() throws Exception {
+  public void doublingWithInput() throws Exception {
     mockMvc.perform(get("/doubling?input=5")
         .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
@@ -60,6 +60,36 @@ public class RestControllerTest {
         .andExpect(content().contentType(contentType))
         .andExpect(jsonPath("error", is("Please provide a input!")));
   }
+
+  @Test
+  public void greeterWithoutInput() throws Exception {
+    mockMvc.perform(get("/greeter")
+        .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(contentType))
+        .andExpect(jsonPath("error", is("Please provide a name!")));
+  }
+
+  @Test
+  public void greeterWithInput() throws Exception {
+    mockMvc.perform(get("/greeter?name=petike&title=student")
+        .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(contentType))
+        .andExpect(jsonPath("$.welcome_message", is("Oh, hi there petike, my dear student!")));
+  }
+
+  @Test
+  public void greeterWithoutTitle() throws Exception {
+    mockMvc.perform(get("/greeter?name=petike")
+        .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(contentType))
+        .andExpect(jsonPath("error", is("Please provide a title!")));
+  }
+
+  
+
 
 
 }
