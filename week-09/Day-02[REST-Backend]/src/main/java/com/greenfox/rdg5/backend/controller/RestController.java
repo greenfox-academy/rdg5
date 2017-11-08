@@ -32,8 +32,8 @@ public class RestController {
     return ap;
   }
 
-  @ExceptionHandler(MissingServletRequestParameterException.class)
-  public hendlarOrrer handleMissingParams(MissingServletRequestParameterException ex) {
+   @ExceptionHandler(MissingServletRequestParameterException.class)
+   public hendlarOrrer handleMissingParams(MissingServletRequestParameterException ex) {
     String name = ex.getParameterName();
     return new hendlarOrrer("Please provide a " + name + "!");
   }
