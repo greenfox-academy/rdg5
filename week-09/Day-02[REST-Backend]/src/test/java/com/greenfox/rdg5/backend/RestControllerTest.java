@@ -88,8 +88,18 @@ public class RestControllerTest {
         .andExpect(jsonPath("error", is("Please provide a title!")));
   }
 
-  
+  @Test
+  public void appendAWithInput() throws Exception {
+    mockMvc.perform(get("/appenda/kuty")
+        .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(jsonPath("$.appended", is("kutya")));
+  }
 
-
+  @Test
+  public void appendAWithoutInput() throws Exception {
+    mockMvc.perform(get("/appenda")
+        .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().is4xxClientError());
+  }
 
 }
