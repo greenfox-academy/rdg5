@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -42,14 +43,23 @@ public class RestControllerTest {
   }
 
   @Test
-  public void testUnsuccessfulSignUp() throws Exception {
-    mockMvc.perform(post("/user/signup")
-        .contentType(MediaType.APPLICATION_JSON)
-        .content("{\"email\": \"name@example.com\", \"password\": \"12345\"}"))
+  public void doublingSuccesful() throws Exception {
+    mockMvc.perform(get("/doubling?input=5")
+        .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk())
         .andExpect(content().contentType(contentType))
-        .andExpect(jsonPath("$.result", is("fail")))
-        .andExpect(jsonPath("$.message", is("email address already exists")));
+        .andExpect(jsonPath("$.received", is(5)))
+        .andExpect(jsonPath("$.result", is(10)));
   }
+
+  @Test
+  public void doublingNoInput() throws Exception {
+    mockMvc.perform(get("/doubling")
+        .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isOk())
+        .andExpect(content().contentType(contentType))
+        .andExpect(jsonPath("error", is("Please provide a input!")));
+  }
+
 
 }

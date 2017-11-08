@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class RestController {
 
   @RequestMapping(value = "/doubling")
-  public NumberDoubled doubling(@RequestParam(value = "input") int input) {
+  public NumberDoubled doubling(@RequestParam(value = "input") Integer input) {
     NumberDoubled nd = new NumberDoubled(input);
     return nd;
   }

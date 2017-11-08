@@ -2,10 +2,10 @@ package com.greenfox.rdg5.backend.model;
 
 public class NumberDoubled {
 
-  int received;
-  int result;
+  Integer received;
+  Integer result;
 
-  public NumberDoubled(int received) {
+  public NumberDoubled(Integer received) {
     this.received = received;
     result = received * 2;
   }
@@ -14,7 +14,7 @@ public class NumberDoubled {
     return received;
   }
 
-  public void setReceived(int received) {
+  public void setReceived(Integer received) {
     this.received = received;
   }
 
@@ -22,7 +22,8 @@ public class NumberDoubled {
     return result;
   }
 
-  public void setResult(int result) {
+  public void setResult(Integer result) {
     this.result = result;
   }
+
 }
