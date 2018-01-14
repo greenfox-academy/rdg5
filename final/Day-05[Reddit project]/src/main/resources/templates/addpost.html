@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Create new post</title>
+</head>
+<body>
+<form action="/reddit/add" method="post" th:object="${post}">
+  <input type="text" name="content" th:field="*{content}"/>
+  <input type="submit" value="submit"/>
+</form>
+</body>
+</html>

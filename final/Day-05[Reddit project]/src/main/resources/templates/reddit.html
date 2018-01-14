@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Reddit</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<form action="/reddit/add">
+  <input type="submit" value="Add new post"/>
+</form>
+<h1>Posts</h1>
+<table>
+  <tr>
+    <th><b>SCORE</b></th>
+    <th><b>Actions</b></th>
+    <th><b>Content</b></th>
+  </tr>
+
+  <tr th:each="post : ${post}">
+    <td th:text="${post.score}"></td>
+    <td><a th:href="@{'/reddit/{id}/upvote' (id=${post.id})}">+</a>
+      <a th:href="@{'/reddit/{id}/downvote' (id=${post.id})}"> -</a>
+    </td>
+    <td th:text="${post.content}"></td>
+  </tr>
+</table>
+</body>
+</html>
